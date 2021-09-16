@@ -48,6 +48,7 @@ navigator.geolocation.getCurrentPosition(position => {
     fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial`)
     .then(res => res.json())
     .then(data => {
+        console.log(data)
         const temp = Math.round(data.main.temp)
         const toCelsius = Math.round((temp - 32) * 5/9)
         document.getElementById("weather").innerHTML = `
@@ -55,7 +56,7 @@ navigator.geolocation.getCurrentPosition(position => {
             <p class="city">${data.name}</p> 
         `
     })
-    .catch(err => {
+    .catch( () => {
         document.getElementById("weather").innerHTML = `
             <p>Weather unavailable</p>
         `
@@ -86,7 +87,6 @@ btnJoke.addEventListener("click", function(){
     fetch("https://official-joke-api.appspot.com/random_joke")
     .then(res => res.json())
     .then(data => {
-        console.log(data)
         quote.textContent = ''
         phrase.textContent = `" ${data.setup} "`
         authorQuote.textContent = "the answer is...."
