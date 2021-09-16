@@ -37,24 +37,28 @@ p#quote {
     margin-top: 20px;
 }
 
+p#phrase, 
+p#author-quote {
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+}
+
 p#phrase {
-    border-bottom: 1px solid beige;
-    border-top: 1px solid beige;
+    border-bottom: 1px solid rgb(230, 230, 202);
+    border-top: 1px solid rgb(230, 230, 202);
     max-width: 500px;
     width: 100%;
-    font-style: italic;
     align-self: center;
-    text-align: center;
     padding: .45em;
-    letter-spacing: 1px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.95);
+    line-height: 1.4;
 }
 
 p#author-quote {
-    text-align: center;
     color: #ff713b;
-    font-weight: 600;
-    font-style: italic;
-    letter-spacing: 1px;
+    font-size: 1.3rem;
 }
 
 
@@ -141,12 +145,13 @@ button:hover {
         max-width: 400px;
     }
     
-    #phrase {
-        font-size: 1.6rem;
+    p#phrase {
+        font-size: 1.5rem;
+        max-width: 700px;
     }
     
     p#author-quote {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     button {
